@@ -8,8 +8,8 @@
  * edited.
  *
  * Methods created for linked list
- * Done: size addLast, addFirst removeFirst, removeLast, isEmpty, indexOf
- * Todo addAt, remove, removeAt, elementAt, findMiddle, clean, rotateListRight
+ * Done: size addLast, addFirst removeFirst, removeLast, isEmpty, indexOf, elementAt, clean, findMiddle
+ * Todo addAt, remove, removeAt, rotateListRight
  */
 
 class Node {
@@ -138,6 +138,23 @@ class SinglyLinkedList {
         return null;
     }
 
+    // return the value the node at the index provided
+    elementAt(index) {
+        // check the index provided is with in range
+        if (index < 0 || index > this.size()) {
+            throw new RangeError("Index provide is out of range");
+        }
+
+        let cur = this.head;
+        let count = 0;
+        while (cur != null && count < index) {
+            cur = cur.next;
+            count++;
+        }
+
+        return cur.val;
+    }
+
     displayList() {
         let node = this.head;
 
@@ -148,6 +165,38 @@ class SinglyLinkedList {
         }
         output += "NULL";
         console.log(output);
+    }
+
+    // empty the list
+    clean() {
+        this.head = null;
+        this.length = 0;
+    }
+
+    // find the middle of the list and return the middle node
+    // if return null if list is empty
+    findMiddle() {
+        // check if the list is empty
+        if (this.size() === 0) {
+            return null;
+        }
+
+        let slow = this.head;
+        let fast = this.head;
+
+        // two pointer approach
+        // - slow pointer will increment one at a time
+        // -fast pointer will increment 2 nodes at a time
+        // for an even list, when the fast pointer next node is empty, this means the fast pointer has reach the end of the list and the slow has reached the middle of the list
+        // for an odd list, when the fast pointer is empty, this means the fast pointer is past the end of the list and the slow pointer has reached the middle of the list.
+
+        while (fast !== null && fast.next !== null) {
+            slow = slow.next;
+
+            fast = fast.next.next;
+        }
+
+        return slow;
     }
 }
 
