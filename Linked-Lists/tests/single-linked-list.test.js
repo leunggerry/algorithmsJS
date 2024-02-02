@@ -35,7 +35,7 @@ describe("Single Linked Lists Test", () => {
         const list = new SinglyLinkedList();
         expect(list.length).toEqual(0);
 
-        list.displayList();
+        //list.displayList();
     });
 
     test("add node to list", () => {
@@ -47,13 +47,13 @@ describe("Single Linked Lists Test", () => {
         expect(list.length).toEqual(1);
         list.addFirst(2);
         expect(list.length).toEqual(2);
-        list.displayList();
+        //list.displayList();
 
         console.log("Check addLast");
         list.addLast(3);
         expect(list.length).toEqual(3);
 
-        list.displayList();
+        //list.displayList();
     });
 
     test("remove node from list", () => {
@@ -64,21 +64,19 @@ describe("Single Linked Lists Test", () => {
         list.addLast(3);
         list.addLast(4);
         list.addLast(5);
-        list.displayList();
+        //list.displayList();
 
         //remove the first node
         expect(list.removeFirst()).toEqual(1);
         expect(list.length).toEqual(4);
-        list.displayList();
+        //list.displayList();
 
         //remove the last node
         expect(list.removeLast()).toEqual(5);
-        list.displayList();
+        //list.displayList();
     });
 
     test("indexOf", () => {
-        const list = new SinglyLinkedList();
-
         // return the index of "8"
         expect(testListEven.indexOf(8)).toEqual(3);
 
@@ -95,7 +93,7 @@ describe("Single Linked Lists Test", () => {
         // test odd number list
         expect(testListTens.findMiddle().val).toEqual(30);
 
-        testListEven.displayList();
+        //testListEven.displayList();
         //test even number list
         expect(testListEven.findMiddle().val).toEqual(8);
     });
