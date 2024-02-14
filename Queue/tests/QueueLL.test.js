@@ -32,6 +32,22 @@ describe("Linked List implementation of Queue", () => {
         }
     });
 
+    test("enqueue", () => {
+        TEST_QUEUE_LL.enqueue(10);
+        expect(TEST_QUEUE_LL.length).toEqual(10);
+    });
+
+    test("dequeue", () => {
+        const test1 = TEST_QUEUE_LL.dequeue();
+
+        expect(TEST_QUEUE_LL.length).toEqual(8);
+        expect(test1).toEqual(1);
+
+        const test2 = TEST_QUEUE_LL.dequeue();
+
+        expect(TEST_QUEUE_LL.length).toEqual(7);
+        expect(test2).toEqual(2);
+    });
     test("test the display block", () => {
         TEST_QUEUE_LL.displayList();
 
