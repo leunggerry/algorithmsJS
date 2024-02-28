@@ -12,9 +12,8 @@ Algorithms implemented in this repository are just based on personal inspiration
   - **Linked-Lists**
     - [Singly-Linked-List](Linked-Lists/single-linked-list.js)
     - [Doubly-Linked-List](Linked-Lists/double-linked-list.js)
-  - Queue
+  - **Queue**
     - [Queue-Arr](Queue/Queue.js)
     - [Queue-Linked-List](Queue/QueueLL.js)
-  - Stack
+  - **Stack**
     - [Stack-Arr](Stack/stack.js)
-  - Binary Trees
